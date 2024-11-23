@@ -40,3 +40,24 @@ Este projeto é uma função AWS Lambda que redimensiona imagens carregadas em u
    - `DESTINATION_BUCKET`: Nome do bucket de destino.
 4. Adicione um gatilho S3 ao bucket de origem para eventos de upload (`s3:ObjectCreated:*`).
 5. Adicione um Layer apontando para o ARN arn:aws:lambda:sa-east-1:770693421928:layer:Klayers-p310-Pillow:9 que ira resolver as dependencias do projeto.
+6. AUmentar o timeout da funcao, por padrao esta em 3 segundos e no meu caso foi aumentado para 30 segundos.
+
+## Estrutura do codigo
+.
+├── lambda_function.py  # Código principal da função Lambda
+├── requirements.txt    # Dependências do projeto
+└── README.md           # Documentação do projeto
+└── iam.json            # Modelo de role
+
+
+## Logs e Debugging
+Verifique os logs da Lambda no CloudWatch Logs em caso de falhas.
+Mensagens comuns de erro:
+Timeout: Aumente o timeout da Lambda se o processamento da imagem for lento.
+Permissões S3: Certifique-se de que a policy IAM inclui acesso aos buckets.
+
+## Contribuições
+Sinta-se à vontade para abrir Issues ou enviar Pull Requests com melhorias e correções!
+
+## Licença
+Este projeto está licenciado sob a MIT License.
