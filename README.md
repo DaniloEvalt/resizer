@@ -44,9 +44,13 @@ Este projeto é uma função AWS Lambda que redimensiona imagens carregadas em u
 
 ## Estrutura do codigo
 .
+
 ├── lambda_function.py  # Código principal da função Lambda
+
 ├── requirements.txt    # Dependências do projeto
+
 └── README.md           # Documentação do projeto
+
 └── iam.json            # Modelo de role
 
 
